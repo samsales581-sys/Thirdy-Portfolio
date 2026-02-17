@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Address</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            padding: 1.5rem 5%;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            list-style: none;
+            gap: 3rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #ff6b6b;
+        }
+
+        /* Address Section */
+        .address-section {
+            min-height: 100vh;
+            padding: 120px 5% 80px;
+        }
+
+        .address-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .address-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .address-header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .address-header h1 span {
+            color: #ff6b6b;
+        }
+
+        .address-header p {
+            font-size: 1.2rem;
+            color: #cccccc;
+        }
+
+        .address-content {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .location-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #ff6b6b;
+        }
+
+        .location-card {
+            background-color: #1a1a1a;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            border: 2px solid #333333;
+            transition: all 0.3s ease;
+        }
+
+        .location-card:hover {
+            border-color: #ff6b6b;
+            background-color: #222222;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+        }
+
+        .location-card i {
+            font-size: 2.5rem;
+            color: #ff6b6b;
+            margin-bottom: 1rem;
+        }
+
+        .location-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .location-card p {
+            color: #cccccc;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .location-card a {
+            color: #ff6b6b;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .location-card a:hover {
+            color: #ff5252;
+            text-decoration: underline;
+        }
+
+        .map-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #ff6b6b;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 500px;
+            background-color: #1a1a1a;
+            border-radius: 15px;
+            border: 2px solid #333333;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+        }
+
+        .map-placeholder i {
+            font-size: 5rem;
+            color: #ff6b6b;
+            margin-bottom: 1rem;
+        }
+
+        .map-placeholder p {
+            font-size: 1.2rem;
+            color: #cccccc;
+            margin-bottom: 0.5rem;
+        }
+
+        .map-placeholder small {
+            color: #888888;
+            font-size: 0.9rem;
+        }
+
+        .directions-section {
+            margin-top: 4rem;
+            background-color: #1a1a1a;
+            padding: 3rem;
+            border-radius: 15px;
+            border: 2px solid #333333;
+        }
+
+        .directions-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #ff6b6b;
+            text-align: center;
+        }
+
+        .directions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .direction-card {
+            background-color: #222222;
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid #ff6b6b;
+        }
+
+        .direction-card i {
+            font-size: 2rem;
+            color: #ff6b6b;
+            margin-bottom: 1rem;
+        }
+
+        .direction-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .direction-card p {
+            color: #cccccc;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 1024px) {
+            .address-content {
+                grid-template-columns: 1fr;
+            }
+
+            .map-container {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1.5rem;
+            }
+
+            .address-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .location-info h2,
+            .map-section h2,
+            .directions-section h2 {
+                font-size: 2rem;
+            }
+
+            .map-container {
+                height: 300px;
+            }
+
+            .directions-section {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="address.html" class="active">Address</a></li>
+        </ul>
+    </nav>
+
+    <!-- Address Section -->
+    <section class="address-section">
+        <div class="address-container">
+            <!-- Header -->
+            <div class="address-header">
+                <h1>Find <span>Me</span></h1>
+                <p>Here's where you can find me and contact me</p>
+            </div>
+
+           <!-- Address Content -->
+<div class="address-content">
+    
+    <!-- Location Info -->
+    <div class="location-info">
+        <h2>Location Details</h2>
+        
+       <h3><p>📍 Visit my location on Google Maps:</p></h3> 
+        
+        <h1><a href="https://maps.app.goo.gl/MshQMnpGr8JeG7Vh6" 
+           target="_blank" 
+           class="map-button">
+           Open in Google Maps
+        </a></h1>
+        
+    </div>
+</div>
+
+                    <div class="location-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Home Address</h3>
+                        <p>310 Gomburza Street<br>
+                        Naggasican<br>
+                        Santiago City, Isabela 3311<br>
+                        Philippines</p>
+                    </div>
+
+                    <div class="location-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email Address</h3>
+                        <p>samsales581@gmail.com</a></p>
+                        
+                    </div>
+
+                    <div class="location-card">
+                        <i class="fas fa-phone-alt"></i>
+                        <h3>Contact Number</h3>
+                        <p>Mobile: <a href="tel:+1234567890">0906-941-8354</a></p>
+                    
+                    </div>
+</body>
+</html>
