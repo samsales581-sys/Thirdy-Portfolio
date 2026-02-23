@@ -10,12 +10,20 @@
 <body style="margin:0; padding:0; font-family:Arial,sans-serif; color:#ffffff; overflow-x:hidden; background-color:#1a0000; background-image:radial-gradient(ellipse at bottom left, rgba(204,17,0,0.55) 0%, rgba(136,0,0,0.25) 35%, transparent 60%), radial-gradient(ellipse at top right, rgba(204,17,0,0.55) 0%, rgba(136,0,0,0.25) 35%, transparent 60%), radial-gradient(ellipse at bottom right, rgba(153,0,0,0.20) 0%, transparent 45%), radial-gradient(ellipse at top left, rgba(153,0,0,0.18) 0%, transparent 45%); min-height:100vh;">
 
     <!-- Navigation -->
-    <nav style="position:fixed; top:0; width:100%; background-color:rgba(0,0,0,0.9); padding:20px 5%; z-index:1000;">
-        <ul style="display:flex; justify-content:flex-end; list-style:none; gap:40px; margin:0; padding:0;">
-            <li><a href="index.html" style="color:#ff6b6b; text-decoration:none; font-size:18px;">Home</a></li>
-            <li><a href="about.html" style="color:#ffffff; text-decoration:none; font-size:18px;">About</a></li>
-            <li><a href="contact.html" style="color:#ffffff; text-decoration:none; font-size:18px;">Contact</a></li>
-            <li><a href="address.html" style="color:#ffffff; text-decoration:none; font-size:18px;">Address</a></li>
+    <nav style="position:fixed; top:0; left:0; right:0; background-color:rgba(0,0,0,0.9); padding:20px 5%; z-index:1000; box-sizing:border-box;">
+        <ul style="display:flex; justify-content:flex-end; list-style:none; gap:40px; margin:0; padding:0; flex-wrap:nowrap;">
+            <li><a href="index.html" style="color:#ff6b6b; text-decoration:none; font-size:18px; white-space:nowrap;"
+                onmouseover="this.style.color='#ff6b6b';"
+                onmouseout="this.style.color='#ff6b6b';">Home</a></li>
+            <li><a href="about.html" style="color:#ffffff; text-decoration:none; font-size:18px; white-space:nowrap;"
+                onmouseover="this.style.color='#ff6b6b';"
+                onmouseout="this.style.color='#ffffff';">About</a></li>
+            <li><a href="contact.html" style="color:#ffffff; text-decoration:none; font-size:18px; white-space:nowrap;"
+                onmouseover="this.style.color='#ff6b6b';"
+                onmouseout="this.style.color='#ffffff';">Contact</a></li>
+            <li><a href="address.html" style="color:#ffffff; text-decoration:none; font-size:18px; white-space:nowrap;"
+                onmouseover="this.style.color='#ff6b6b';"
+                onmouseout="this.style.color='#ffffff';">Address</a></li>
         </ul>
     </nav>
 
