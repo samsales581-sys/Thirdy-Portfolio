@@ -6,25 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - About</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <style>
+        .nav-link  { transition: color 0.3s ease; }
+        .card      { transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; }
+        .play-btn  { transition: background-color 0.3s ease; }
+    </style>
 </head>
 <body style="margin:0; padding:0; font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif; background-color:#1a0000; background-image:radial-gradient(ellipse at bottom left, rgba(204,17,0,0.55) 0%, rgba(136,0,0,0.25) 35%, transparent 60%), radial-gradient(ellipse at top right, rgba(204,17,0,0.55) 0%, rgba(136,0,0,0.25) 35%, transparent 60%), radial-gradient(ellipse at bottom right, rgba(153,0,0,0.20) 0%, transparent 45%), radial-gradient(ellipse at top left, rgba(153,0,0,0.18) 0%, transparent 45%); color:#ffffff; overflow-x:hidden; min-height:100vh;">
-
-
 
     <!-- Navigation -->
     <nav style="position:fixed; top:0; left:0; right:0; background-color:rgba(0,0,0,0.95); padding:1.5rem 5%; z-index:1000; box-sizing:border-box;">
         <ul style="display:flex; justify-content:flex-end; align-items:center; list-style:none; gap:3rem; margin:0; padding:0; flex-wrap:nowrap;">
-            <li><a href="index.html" style="text-decoration:none; color:#ffffff; font-size:1.1rem; font-weight:500; letter-spacing:1px; white-space:nowrap;"
+            <li><a href="index.html" class="nav-link" style="text-decoration:none; color:#ffffff; font-size:1.1rem; font-weight:500; letter-spacing:1px; white-space:nowrap;"
                 onmouseover="this.style.color='#ff6b6b';"
                 onmouseout="this.style.color='#ffffff';">Home</a></li>
-            <li><a href="about.html" style="text-decoration:none; color:#ff6b6b; font-size:1.1rem; font-weight:500; letter-spacing:1px; white-space:nowrap;"
+            <li><a href="about.html" class="nav-link" style="text-decoration:none; color:#ff6b6b; font-size:1.1rem; font-weight:500; letter-spacing:1px; white-space:nowrap;"
                 onmouseover="this.style.color='#ff6b6b';"
                 onmouseout="this.style.color='#ff6b6b';">About</a></li>
-            <li><a href="contact.html" style="text-decoration:none; color:#ffffff; font-size:1.1rem; font-weight:500; letter-spacing:1px; white-space:nowrap;"
+            <li><a href="contact.html" class="nav-link" style="text-decoration:none; color:#ffffff; font-size:1.1rem; font-weight:500; letter-spacing:1px; white-space:nowrap;"
                 onmouseover="this.style.color='#ff6b6b';"
                 onmouseout="this.style.color='#ffffff';">Contact</a></li>
-            <li><a href="address.html" style="text-decoration:none; color:#ffffff; font-size:1.1rem; font-weight:500; letter-spacing:1px; white-space:nowrap;"
+            <li><a href="address.html" class="nav-link" style="text-decoration:none; color:#ffffff; font-size:1.1rem; font-weight:500; letter-spacing:1px; white-space:nowrap;"
                 onmouseover="this.style.color='#ff6b6b';"
                 onmouseout="this.style.color='#ffffff';">Address</a></li>
         </ul>
@@ -82,7 +84,7 @@
                 <div style="display:flex; gap:1.5rem; align-items:stretch;">
 
                     <!-- Gym Card -->
-                    <div style="margin:0; flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; background-color:#1a1a1a; padding:2rem; border-radius:15px; border:2px solid #ff6b6b; box-sizing:border-box;"
+                    <div class="card" style="margin:0; flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; background-color:#1a1a1a; padding:2rem; border-radius:15px; border:2px solid #ff6b6b; box-sizing:border-box;"
                          onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(255,107,107,0.3)'; this.style.backgroundColor='#222222';"
                          onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.style.backgroundColor='#1a1a1a';">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" style="width:60px; height:60px; margin-bottom:1rem;">
@@ -101,7 +103,7 @@
                     <div style="display:flex; flex-direction:column; gap:1.5rem; flex:1;">
 
                         <!-- Game Card -->
-                        <div style="margin:0; display:flex; flex-direction:column; align-items:center; justify-content:center; height:180px; background-color:#1a1a1a; padding:2rem; border-radius:15px; border:2px solid #ff6b6b; box-sizing:border-box;"
+                        <div class="card" style="margin:0; display:flex; flex-direction:column; align-items:center; justify-content:center; height:180px; background-color:#1a1a1a; padding:2rem; border-radius:15px; border:2px solid #ff6b6b; box-sizing:border-box;"
                              onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(255,107,107,0.3)'; this.style.backgroundColor='#222222';"
                              onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.style.backgroundColor='#1a1a1a';">
                             <div style="display:flex; justify-content:center; gap:0.5rem; margin-bottom:0.5rem;">
@@ -111,14 +113,14 @@
                             </div>
                             <h3 style="margin-bottom:0.3rem; font-size:1rem; margin-top:0;">My Game</h3>
                             <p style="font-size:0.8rem; text-align:center; color:#aaa; margin-bottom:0.3rem;">A game I created using HTML, CSS, and JavaScript.</p>
-                            <a href="game.html" target="_blank"
+                            <a href="game.html" target="_blank" class="play-btn"
                                style="display:inline-block; padding:0.3rem 1rem; background:#667eea; color:white; border-radius:5px; text-decoration:none; font-size:0.85rem; cursor:pointer;"
                                onmouseover="this.style.backgroundColor='#5a6fd6';"
-                               onmouseout="this.style.backgroundColor='#667eea';">▶ Play Game</a>
+                               onmouseout="this.style.backgroundColor='#667eea';">&#9654; Play Game</a>
                         </div>
 
                         <!-- Gaming Card -->
-                        <div style="margin:0; flex:1; display:flex; flex-direction:column; align-items:center; background-color:#1a1a1a; padding:2rem; border-radius:15px; border:2px solid #ff6b6b; box-sizing:border-box; min-height:0;"
+                        <div class="card" style="margin:0; flex:1; display:flex; flex-direction:column; align-items:center; background-color:#1a1a1a; padding:2rem; border-radius:15px; border:2px solid #ff6b6b; box-sizing:border-box; min-height:0;"
                              onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(255,107,107,0.3)'; this.style.backgroundColor='#222222';"
                              onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.style.backgroundColor='#1a1a1a';">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" style="width:45px; height:45px; margin-bottom:0.3rem; flex-shrink:0;">
